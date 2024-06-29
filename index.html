@@ -85,16 +85,19 @@
             }
             .content-left {
                 margin-left: 0;
-                margin-top: 0; /* Reset margin-top for mobile view */
                 padding: 0 20px;
+                margin-top: 0; /* Reset margin-top for mobile view */
                 width: 100%;
                 justify-content: flex-end; /* Align content to the bottom */
                 height: 100%;
+                align-items: center; /* Center content horizontally */
             }
             .player {
                 width: 470px; /* Ensure the player maintains its width */
-                height: auto; /* Auto height to maintain aspect ratio */
-                margin-bottom: 0; /* Remove bottom margin */
+                height: 100px; /* Maintain the height */
+                margin-bottom: 20px; /* Space between player and bottom of the screen */
+                position: absolute; /* Positioning the player */
+                bottom: 20px; /* Move the player 20px from the bottom */
             }
             .track-list {
                 display: none; /* Hide tracklist on mobile */
@@ -121,3 +124,4 @@
     </main>
 </body>
 </html>
+
