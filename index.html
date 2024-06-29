@@ -81,7 +81,7 @@
         @media (max-width: 768px) {
             html {
                 background-size: cover;
-                background-position: left; /* Position the background image to the left */
+                background-position: right; /* Position the background image to the right */
             }
             .content-left {
                 margin-left: 0;
@@ -90,7 +90,7 @@
                 width: 100%;
                 justify-content: flex-end; /* Align content to the bottom */
                 height: 100%;
-                align-items: flex-end; /* Align content to the right */
+                align-items: flex-start; /* Align content to the left */
             }
             .player {
                 width: 470px; /* Ensure the player maintains its width */
@@ -98,8 +98,8 @@
                 margin-bottom: 20px; /* Space between player and bottom of the screen */
                 position: absolute; /* Positioning the player */
                 bottom: 20px; /* Move the player 20px from the bottom */
-                right: 20px; /* Align the player to the right edge */
-                transform: translateX(0); /* No translation needed, ensure visibility */
+                left: 0; /* Align the player to the left edge */
+                transform: translateX(-50px); /* Ensure the left edge of the player is visible */
             }
             .track-list {
                 display: none; /* Hide tracklist on mobile */
@@ -126,4 +126,3 @@
     </main>
 </body>
 </html>
-
