@@ -108,11 +108,21 @@
                 display: none; /* Hide tracklist on smaller screens */
             }
         }
-        /* Specific adjustments for 810px width screens */
-        @media (max-width: 810px) {
+        /* Specific adjustments for screens around 810px to 820px width */
+        @media (min-width: 810px) and (max-width: 820px) {
             .player {
                 margin-bottom: 10px; /* Reduce margin to fit the player fully within the screen */
                 bottom: 10px; /* Move the player slightly higher from the bottom */
+                left: 0; /* Ensure the player is stuck to the left edge */
+                width: 470px; /* Ensure the width remains consistent */
+                height: 100px; /* Keep the height consistent */
+            }
+            .content-left {
+                margin-left: 0;
+                padding: 0;
+                justify-content: flex-end;
+                height: 100%;
+                align-items: flex-start; /* Keep content aligned to the left */
             }
         }
     </style>
