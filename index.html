@@ -10,10 +10,10 @@
     <style>
         html {
             background: url('Images/background.jpg') no-repeat fixed;
-            background-size: cover; /* Adjust for better responsiveness */
-            background-position: right; /* Center the background image on small screens */
+            background-size: cover;
+            background-position: right;
             height: 100%;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
         }
         body {
             margin: 0;
@@ -21,7 +21,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            color: white; /* Change text color to white for better visibility on background */
+            color: white;
         }
         header {
             display: flex;
@@ -29,107 +29,106 @@
             align-items: center;
             padding: 10px 20px;
             background: transparent;
-            flex: 0 0 auto; /* Prevent header from shrinking or growing */
+            flex: 0 0 auto;
         }
         header img {
-            height: 150px; /* Increase height by 50px (original was 100px) */
-            width: auto; /* Maintain aspect ratio */
+            height: 150px;
+            width: auto;
         }
         header a {
             text-decoration: none;
-            color: black; /* Change text color to black */
+            color: black;
             font-weight: bold;
-            border: 1px solid black; /* Change border color to black */
-            padding: 5px 10px; /* Adjust padding as needed */
+            border: 1px solid black;
+            padding: 5px 10px;
             border-radius: 5px;
             position: relative;
-            top: -40px; /* Adjust this value to move the "Contact" button higher */
-            background-color: white; /* Set background color to white */
+            top: -40px;
+            background-color: white;
         }
         main {
             display: flex;
-            flex: 1; /* Allow main content to grow */
-            align-items: center; /* Center content vertically */
-            justify-content: center; /* Center content horizontally */
+            flex: 1;
+            align-items: center;
+            justify-content: flex-start; /* Align to the left */
             position: relative;
         }
-        .player {
+        .player, .track-list {
             width: 470px;
-            height: 100px; /* Adjust height as needed */
-            margin-bottom: 60px; /* Adjust this value to increase space between player and tracklist */
-            min-width: 470px; /* Prevent shrinking below 470px */
+            min-width: 470px;
+        }
+        .player {
+            height: 100px;
+            margin-bottom: 20px;
         }
         .track-list {
-            width: 470px;
-            height: 200px; /* Set a fixed height to contain the widget */
-            margin: 0; /* Remove margins to save space */
-            min-width: 470px; /* Prevent shrinking below 470px */
-            overflow-y: scroll; /* Enable vertical scrolling */
-            -ms-overflow-style: none;  /* Internet Explorer 10+ */
-            scrollbar-width: none;  /* Firefox */
+            height: 200px;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .track-list::-webkit-scrollbar { 
-            display: none;  /* Safari and Chrome */
+        .track-list::-webkit-scrollbar {
+            display: none;
         }
         .content-left {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Center content vertically */
-            z-index: 1; /* Ensure content is on top */
-            margin-left: -700px; /* Adjust this value to move the content further to the left */
-            margin-top: -50px; /* Move the content 50px upwards */
+            align-items: flex-start;
+            justify-content: center;
+            z-index: 1;
+            margin-left: calc(50% - 640px); /* Center on a 1280px width screen */
+            margin-top: -50px;
         }
         /* Media query for tablets and small screens */
         @media (max-width: 1024px) {
             html {
                 background-size: cover;
-                background-position: right; /* Position the background image to the right */
+                background-position: right;
             }
             .content-left {
                 margin-left: 0;
                 padding: 0 20px;
-                margin-top: 0; /* Reset margin-top for mobile view */
+                margin-top: 0;
                 width: 100%;
-                justify-content: flex-end; /* Align content to the bottom */
+                justify-content: flex-end;
                 height: 100%;
-                align-items: flex-start; /* Align content to the left */
+                align-items: flex-start;
             }
             .player {
-                width: 470px; /* Ensure the player maintains its width */
-                height: 100px; /* Maintain the height */
-                margin-bottom: 20px; /* Space between player and bottom of the screen */
-                position: absolute; /* Positioning the player */
-                bottom: 20px; /* Move the player 20px from the bottom */
-                left: 0; /* Stick the player to the left edge */
-                transform: none; /* Remove any translation */
+                width: 470px;
+                height: 100px;
+                margin-bottom: 20px;
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                transform: none;
             }
             .track-list {
-                display: none; /* Hide tracklist on smaller screens */
+                display: none;
             }
         }
         /* Specific adjustments for screens around 810px to 820px width */
         @media (min-width: 810px) and (max-width: 820px) {
             .player {
-                margin-bottom: 10px; /* Reduce margin to fit the player fully within the screen */
-                bottom: 10px; /* Move the player slightly higher from the bottom */
-                left: 0; /* Ensure the player is stuck to the left edge */
-                width: 470px; /* Ensure the width remains consistent */
-                height: 100px; /* Keep the height consistent */
+                margin-bottom: 10px;
+                bottom: 10px;
+                left: 0;
+                width: 470px;
+                height: 100px;
             }
             .content-left {
                 margin-left: 0;
                 padding: 0;
                 justify-content: flex-end;
                 height: 100%;
-                align-items: flex-start; /* Keep content aligned to the left */
+                align-items: flex-start;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Images/logo_image.png" alt="Radio Gecko Logo"> <!-- Updated logo source -->
+        <img src="Images/logo_image.png" alt="Radio Gecko Logo">
         <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
     </header>
     <main>
