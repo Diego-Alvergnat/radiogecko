@@ -9,8 +9,9 @@
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
         html {
-            background: url('Images/background.jpg') no-repeat center center fixed;
-            background-size: cover; /* Ensure the background image covers the entire area */
+            background: url('Images/background.jpg') no-repeat fixed;
+            background-size: cover; /* Adjust for better responsiveness */
+            background-position: right; /* Center the background image on small screens */
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
         }
@@ -63,6 +64,12 @@
             height: 200px; /* Set a fixed height to contain the widget */
             margin: 0; /* Remove margins to save space */
             min-width: 470px; /* Prevent shrinking below 470px */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .track-list::-webkit-scrollbar { 
+            display: none;  /* Safari and Chrome */
         }
         .content-left {
             display: flex;
@@ -70,24 +77,31 @@
             align-items: center;
             justify-content: center; /* Center content vertically */
             z-index: 1; /* Ensure content is on top */
-            margin-left: auto; /* Center content horizontally */
-            margin-right: auto; /* Center content horizontally */
-            position: absolute;
-            bottom: 0; /* Align content to the bottom */
-            left: 0;
-            right: 0;
-            width: 100%;
-            padding: 20px; /* Add padding to adjust spacing */
+            margin-left: -700px; /* Adjust this value to move the content further to the left */
+            margin-top: -50px; /* Move the content 50px upwards */
         }
         @media (max-width: 768px) {
-            header a {
-                top: 0; /* Reset the top positioning of the "Contact" button */
+            html {
+                background-size: cover;
+                background-position: right; /* Position the background image to the right */
+            }
+            .content-left {
+                margin-left: 0;
+                padding: 0 20px;
+                margin-top: 0; /* Reset margin-top for mobile view */
+                width: 100%;
+                justify-content: flex-end; /* Align content to the bottom */
+                height: 100%;
+                align-items: flex-start; /* Align content to the left */
             }
             .player {
-                width: 100%; /* Make the player width 100% on mobile */
-                height: auto; /* Adjust height automatically */
+                width: 470px; /* Ensure the player maintains its width */
+                height: 100px; /* Maintain the height */
                 margin-bottom: 20px; /* Space between player and bottom of the screen */
-                position: static; /* Remove absolute positioning on mobile */
+                position: absolute; /* Positioning the player */
+                bottom: 20px; /* Move the player 20px from the bottom */
+                left: 0; /* Stick the player to the left edge */
+                transform: none; /* Remove any translation */
             }
             .track-list {
                 display: none; /* Hide tracklist on mobile */
@@ -105,6 +119,10 @@
             <div class="player">
                 <iframe src="https://player.radioking.io/geckoradio/?c=%23FFFFFF&c2=%23000000&f=h&i=0&p=1&s=0&li=1&popup=1&plc=NaN&h=undefined&l=470&v=2" style="border-radius: 5px; width: 100%; height: 100%;" frameborder="0"></iframe>
                 <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js"></script>
+            </div>
+            <div class="track-list">
+                <div id="rk-played-tracks-widget" data-id="geckoradio" data-count="10" data-date="0" data-buy="0"></div>
+                <script type="text/javascript" src="https://widget.radioking.io/played-tracks/build/script.min.js"></script>
             </div>
         </div>
     </main>
