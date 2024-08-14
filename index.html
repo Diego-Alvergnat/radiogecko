@@ -58,6 +58,7 @@
             height: 100px; /* Adjust height as needed */
             margin-bottom: 60px; /* Adjust this value to increase space between player and tracklist */
             min-width: 470px; /* Prevent shrinking below 470px */
+            position: relative; /* Default position */
         }
         .track-list {
             width: 470px;
@@ -91,17 +92,16 @@
                 margin-top: 0; /* Reset margin-top for mobile view */
                 width: 100%;
                 justify-content: flex-end; /* Align content to the bottom */
-                height: 100%;
+                height: calc(100% - 100px); /* Adjust height to fit the screen minus the height of the player */
                 align-items: flex-start; /* Align content to the left */
             }
             .player {
-                width: 470px; /* Ensure the player maintains its width */
+                width: 100%; /* Ensure the player takes the full width on small screens */
                 height: 100px; /* Maintain the height */
-                margin-bottom: 20px; /* Space between player and bottom of the screen */
-                position: absolute; /* Positioning the player */
-                bottom: 20px; /* Move the player 20px from the bottom */
+                margin-bottom: 0; /* Remove margin */
+                position: absolute; /* Absolute positioning to keep it at the bottom */
+                bottom: 0; /* Stick the player to the bottom of the screen */
                 left: 0; /* Stick the player to the left edge */
-                transform: none; /* Remove any translation */
             }
             .track-list {
                 display: none; /* Hide tracklist on mobile */
