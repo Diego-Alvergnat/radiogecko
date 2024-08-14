@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Gecko</title>
+    <meta name="description" content="Groovy music for geckos 24/7">
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
         html {
@@ -124,5 +125,18 @@
             </div>
         </div>
     </main>
+    <script>
+        // Function to convert UTC time to the user's local time
+        function convertToUserTime(utcDateString) {
+            var utcDate = new Date(utcDateString + " UTC");
+            return utcDate.toLocaleString();
+        }
+
+        // Example: Assuming your tracklist has elements with a class of 'track-time'
+        document.querySelectorAll('.track-time').forEach(function (element) {
+            var utcTime = element.getAttribute('data-utc'); // Adjust this according to your tracklist data structure
+            element.innerText = convertToUserTime(utcTime);
+        });
+    </script>
 </body>
 </html>
