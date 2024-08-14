@@ -9,9 +9,8 @@
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
         html {
-            background: url('Images/background.jpg') no-repeat fixed;
-            background-size: calc(100% + 50px) auto; /* Expand background image by 50px */
-            background-position: calc(10px - 36px - 10px - 10px) calc(-110px - 55px + 16px + 20px + 13px); /* Move the background 56px left and 32px down */
+            background: url('Images/background.jpg') no-repeat center center fixed;
+            background-size: cover; /* Ensure the background image covers the entire area */
             height: 100%;
             overflow: hidden; /* Prevent scrolling */
         }
@@ -42,6 +41,8 @@
             border: 1px solid black; /* Change border color to black */
             padding: 5px 10px; /* Adjust padding as needed */
             border-radius: 5px;
+            position: relative;
+            top: -40px; /* Adjust this value to move the "Contact" button higher */
             background-color: white; /* Set background color to white */
         }
         main {
@@ -50,63 +51,53 @@
             align-items: center; /* Center content vertically */
             justify-content: center; /* Center content horizontally */
             position: relative;
-            padding: 20px; /* Add padding for better spacing */
         }
         .player {
-            width: 100%;
-            max-width: 470px; /* Limit width to prevent it from being too large */
-            height: 100px; /* Maintain height */
-            margin-bottom: 20px; /* Space between player and tracklist */
+            width: 470px;
+            height: 100px; /* Adjust height as needed */
+            margin-bottom: 60px; /* Adjust this value to increase space between player and tracklist */
+            min-width: 470px; /* Prevent shrinking below 470px */
         }
         .track-list {
-            width: 100%;
-            max-width: 470px; /* Limit width to prevent it from being too large */
+            width: 470px;
             height: 200px; /* Set a fixed height to contain the widget */
-            overflow-y: auto; /* Enable vertical scrolling */
-            -ms-overflow-style: none;  /* Internet Explorer 10+ */
-            scrollbar-width: none;  /* Firefox */
-        }
-        .track-list::-webkit-scrollbar { 
-            display: none;  /* Safari and Chrome */
+            margin: 0; /* Remove margins to save space */
+            min-width: 470px; /* Prevent shrinking below 470px */
         }
         .content-left {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center; /* Center content vertically */
-            width: 100%; /* Ensure full width */
-            height: auto; /* Adjust height as needed */
+            z-index: 1; /* Ensure content is on top */
+            margin-left: auto; /* Center content horizontally */
+            margin-right: auto; /* Center content horizontally */
+            position: absolute;
+            bottom: 0; /* Align content to the bottom */
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px; /* Add padding to adjust spacing */
         }
         @media (max-width: 768px) {
-            html {
-                background-size: cover;
-                background-position: center; /* Center the background image */
-            }
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
             header a {
-                margin-top: 10px; /* Add some spacing above the button */
-            }
-            .content-left {
-                margin-left: 0;
-                padding: 0;
-                height: auto; /* Allow content to adjust height based on its content */
+                top: 0; /* Reset the top positioning of the "Contact" button */
             }
             .player {
-                margin-bottom: 10px; /* Space between player and tracklist */
-                position: relative; /* Ensure the player is positioned normally */
+                width: 100%; /* Make the player width 100% on mobile */
+                height: auto; /* Adjust height automatically */
+                margin-bottom: 20px; /* Space between player and bottom of the screen */
+                position: static; /* Remove absolute positioning on mobile */
             }
             .track-list {
-                display: block; /* Show the tracklist on mobile */
+                display: none; /* Hide tracklist on mobile */
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="Images/logo_image.png" alt="Radio Gecko Logo">
+        <img src="Images/logo_image.png" alt="Radio Gecko Logo"> <!-- Updated logo source -->
         <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
     </header>
     <main>
@@ -115,24 +106,7 @@
                 <iframe src="https://player.radioking.io/geckoradio/?c=%23FFFFFF&c2=%23000000&f=h&i=0&p=1&s=0&li=1&popup=1&plc=NaN&h=undefined&l=470&v=2" style="border-radius: 5px; width: 100%; height: 100%;" frameborder="0"></iframe>
                 <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js"></script>
             </div>
-            <div class="track-list">
-                <div id="rk-played-tracks-widget" data-id="geckoradio" data-count="10" data-date="0" data-buy="0"></div>
-                <script type="text/javascript" src="https://widget.radioking.io/played-tracks/build/script.min.js"></script>
-            </div>
         </div>
     </main>
-    <script>
-        // Function to convert UTC time to the user's local time
-        function convertToUserTime(utcDateString) {
-            var utcDate = new Date(utcDateString + " UTC");
-            return utcDate.toLocaleString();
-        }
-
-        // Example: Assuming your tracklist has elements with a class of 'track-time'
-        document.querySelectorAll('.track-time').forEach(function (element) {
-            var utcTime = element.getAttribute('data-utc'); // Adjust this according to your tracklist data structure
-            element.innerText = convertToUserTime(utcTime);
-        });
-    </script>
 </body>
 </html>
