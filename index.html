@@ -111,7 +111,7 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
-        <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
+        <a href="mailto:alvergnatdiego@gmail.com">Recomend a track</a>
     </header>
     <main>
         <div class="content-left">
@@ -119,53 +119,23 @@
                 <iframe src="https://player.radioking.io/geckoradio/?c=%23FFFFFF&c2=%23000000&f=h&i=0&p=1&s=0&li=1&popup=1&plc=NaN&h=undefined&l=470&v=2" style="border-radius: 5px; width: 100%; height: 100%;" frameborder="0"></iframe>
                 <script type="text/javascript" src="https://player.radioking.io/scripts/iframe.bundle.js"></script>
             </div>
-            <div class="track-list" id="track-list">
-                <!-- Track list will be dynamically generated here -->
+            <div class="track-list">
+                <div id="rk-played-tracks-widget" data-id="geckoradio" data-count="10" data-date="0" data-buy="0"></div>
+                <script type="text/javascript" src="https://widget.radioking.io/played-tracks/build/script.min.js"></script>
             </div>
         </div>
     </main>
     <script>
-        // JSON data with track information
-        const trackData = [
-            {"started_at":"2024-08-14T04:01:53.573747Z","end_at":"2024-08-14T04:05:21.073101Z","duration":207.499353676,"title":"Throw Down","artist":"Carmen","album":null,"buy_link":null,"cover_url":"https://image.radioking.io/radios/672154/cover/custom/f55098c5-5e86-48e1-9c7e-4ecf532fae28.jpeg","type":"music","is_live":false},
-            {"started_at":"2024-08-14T03:57:51.573752Z","end_at":"2024-08-14T04:01:59.075042Z","duration":247.501289816,"title":"Give the People What They Want","artist":"The O'Jays","album":null,"buy_link":null,"cover_url":"https://image.radioking.io/radios/672154/cover/custom/51553e9c-ab83-4070-8ce7-96336843e404.jpeg","type":"music","is_live":false},
-            {"started_at":"2024-08-14T03:55:20.072494Z","end_at":"2024-08-14T03:58:01.072468Z","duration":160.999973406,"title":"Onion Man","artist":"Mac DeMarco","album":null,"buy_link":null,"cover_url":"https://image.radioking.io/radios/672154/cover/custom/3ee4b397-351c-4055-9d69-bcc8a81983e1.jpeg","type":"music","is_live":false}
-        ];
-
         // Function to convert UTC time to the user's local time
         function convertToUserTime(utcDateString) {
             var utcDate = new Date(utcDateString + " UTC");
             return utcDate.toLocaleString();
         }
 
-        // Function to generate track list HTML
-        function generateTrackList(tracks) {
-            const trackListContainer = document.getElementById('track-list');
-            trackListContainer.innerHTML = ''; // Clear any existing content
-
-            tracks.forEach(track => {
-                const trackElement = document.createElement('div');
-                trackElement.classList.add('track-item');
-
-                const startTime = convertToUserTime(track.started_at);
-                const endTime = convertToUserTime(track.end_at);
-                trackElement.innerHTML = `
-                    <div class="track-info">
-                        <img src="${track.cover_url}" alt="${track.title} cover" style="width: 50px; height: 50px;">
-                        <div>
-                            <strong>${track.title}</strong> by ${track.artist} <br>
-                            ${startTime} - ${endTime}
-                        </div>
-                    </div>
-                `;
-
-                trackListContainer.appendChild(trackElement);
-            });
-        }
-
-        // Generate the track list on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            generateTrackList(trackData);
+        // Example: Assuming your tracklist has elements with a class of 'track-time'
+        document.querySelectorAll('.track-time').forEach(function (element) {
+            var utcTime = element.getAttribute('data-utc'); // Adjust this according to your tracklist data structure
+            element.innerText = convertToUserTime(utcTime);
         });
     </script>
 </body>
