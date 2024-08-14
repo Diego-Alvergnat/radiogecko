@@ -54,21 +54,16 @@
             position: relative;
         }
         .player {
-            width: 100%; /* Ensure player takes the full width */
-            max-width: 470px; /* Set a max-width for larger screens */
-            height: 100px; /* Set fixed height */
+            width: 470px;
+            height: 100px; /* Adjust height as needed */
+            margin-bottom: 60px; /* Adjust this value to increase space between player and tracklist */
             min-width: 470px; /* Prevent shrinking below 470px */
-            position: absolute; /* Keep player at the bottom */
-            bottom: 0; /* Stick player to the bottom of the viewport */
-            left: 50%; /* Center player horizontally */
-            transform: translateX(-50%); /* Center player horizontally */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         .track-list {
-            width: 100%; /* Ensure track list takes the full width */
-            max-width: 470px; /* Set a max-width for larger screens */
+            width: 470px;
             height: 200px; /* Set a fixed height to contain the widget */
             margin: 0; /* Remove margins to save space */
+            min-width: 470px; /* Prevent shrinking below 470px */
             overflow-y: scroll; /* Enable vertical scrolling */
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
             scrollbar-width: none;  /* Firefox */
@@ -84,13 +79,11 @@
             z-index: 1; /* Ensure content is on top */
             margin-left: -700px; /* Adjust this value to move the content further to the left */
             margin-top: -50px; /* Move the content 50px upwards */
-            width: 100%; /* Full width for content */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         @media (max-width: 768px) {
             html {
                 background-size: cover;
-                background-position: right center; /* Center background image to the right on smaller screens */
+                background-position: right; /* Position the background image to the right */
             }
             .content-left {
                 margin-left: 0;
@@ -98,16 +91,18 @@
                 margin-top: 0; /* Reset margin-top for mobile view */
                 width: 100%;
                 justify-content: flex-end; /* Align content to the bottom */
-                height: calc(100% - 100px); /* Adjust height to fit the screen minus the height of the player */
-                align-items: flex-start; /* Align content to the left */
+                height: calc(100vh - 100px); /* Ensure there's space for the player */
+                align-items: center; /* Align content to the center horizontally */
             }
             .player {
-                width: 100%; /* Ensure the player takes the full width on small screens */
-                max-width: none; /* Remove max-width restriction on small screens */
-                height: 100px; /* Maintain the height */
-                bottom: 0; /* Stick the player to the bottom of the screen */
-                left: 0; /* Stick the player to the left edge */
-                transform: none; /* Remove any translation */
+                width: 100%; /* Ensure player fits within the screen */
+                max-width: 470px; /* Keep max-width to prevent it from becoming too large */
+                height: 100px; /* Maintain height */
+                margin-bottom: 20px; /* Space between player and bottom of the screen */
+                position: absolute; /* Positioning the player */
+                bottom: 20px; /* Move the player 20px from the bottom */
+                left: 50%; /* Center the player horizontally */
+                transform: translateX(-50%); /* Center the player properly */
             }
             .track-list {
                 display: none; /* Hide tracklist on mobile */
