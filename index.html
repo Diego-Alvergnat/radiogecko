@@ -20,6 +20,8 @@
             background-position: right;
             height: 100%;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         body {
             margin: 0;
@@ -28,6 +30,7 @@
             flex-direction: column;
             height: 100%;
             color: white;
+            overflow: hidden; /* Prevents scrolling */
         }
         header {
             display: flex;
@@ -50,21 +53,21 @@
             color: black;
             font-weight: bold;
             border: 1px solid black;
-            padding: 5px 10px; /* Slightly increased padding for larger button */
+            padding: 3px 6px; /* Original padding for smaller button */
             border-radius: 5px;
             background-color: white;
             position: relative;
             top: -40px;
             font-family: 'Margin', Arial, sans-serif; /* Apply the custom font */
-            font-size: 22px; /* Slightly increased font size */
+            font-size: 20px; /* Original font size */
             margin-right: 15px; /* Space between button and Instagram logo */
-            height: 40px; /* Set a fixed height for alignment */
+            height: 30px; /* Set a fixed height for alignment */
             display: flex;
             align-items: center;
         }
         .instagram-logo {
-            height: 40px; /* Match the height of the CONTACT button */
-            width: 40px; /* Proportional width */
+            height: 30px; /* Match the height of the CONTACT button */
+            width: 30px; /* Proportional width */
             position: relative;
             top: -40px;
             cursor: pointer;
@@ -75,6 +78,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden; /* Prevents scrolling within the main content */
         }
         .player {
             width: 470px;
