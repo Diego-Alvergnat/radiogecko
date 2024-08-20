@@ -8,6 +8,15 @@
     <!-- Favicon link -->
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
+        @font-face {
+            font-family: 'Margin';
+            src: url('fonts/Margin.woff2') format('woff2'),
+                 url('fonts/Margin.woff') format('woff'),
+                 url('fonts/Margin.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         html {
             background: url('Images/background.jpg') no-repeat fixed;
             background-size: cover; /* Adjust for better responsiveness */
@@ -43,6 +52,7 @@
             text-decoration: none;
             color: black; /* Change text color to black */
             font-weight: bold;
+            font-family: 'Margin', Arial, sans-serif; /* Apply the custom font */
             border: 1px solid black; /* Keep the border color as black */
             padding: 5px 10px; /* Adjust padding as needed */
             border-radius: 5px;
