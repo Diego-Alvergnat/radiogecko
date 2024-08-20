@@ -45,7 +45,7 @@
             display: flex;
             align-items: center;
         }
-        header a {
+        header a.track-button {
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -64,6 +64,8 @@
             width: 40px;
             position: relative;
             top: -40px;
+            margin-left: -10px; /* Align Instagram logo with the button */
+            cursor: pointer;
         }
         main {
             display: flex;
@@ -148,7 +150,7 @@
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
         <div class="button-container">
-            <a href="mailto:contact@theradiogecko.com">Recommend a track</a>
+            <a href="mailto:contact@theradiogecko.com" class="track-button">Recommend a track</a>
             <a href="https://www.instagram.com/radio_gecko/?hl=en" target="_blank">
                 <img src="Images/instagram.png" alt="Instagram Logo" class="instagram-logo">
             </a>
