@@ -35,27 +35,28 @@
             height: 150px; /* Increase height by 50px (original was 100px) */
             width: auto; /* Maintain aspect ratio */
         }
-        header a {
+        .recommend-track {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .recommend-track a {
             text-decoration: none;
             color: black; /* Change text color to black */
             font-weight: bold;
             border: 1px solid black; /* Change border color to black */
             padding: 5px 10px; /* Adjust padding as needed */
             border-radius: 5px;
+            background-color: white; /* Set background color to white */
             position: relative;
             top: -40px; /* Adjust this value to move the "Contact" button higher */
-            background-color: white; /* Set background color to white */
+            z-index: 1; /* Ensure the button is above other elements */
         }
-        .social-links {
-            display: flex;
-            align-items: center;
-        }
-        .social-links a {
-            margin-left: 10px; /* Space between buttons */
-        }
-        .social-links img {
-            width: 30px; /* Adjust size of the social media icons */
+        .recommend-track img {
+            margin-top: 10px; /* Space between the button and the Instagram logo */
+            width: 30px; /* Adjust size of the Instagram icon */
             height: 30px;
+            z-index: 1; /* Ensure the icon is above other elements */
         }
         main {
             display: flex;
@@ -141,7 +142,7 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo"> <!-- Updated logo source -->
-        <div class="social-links">
+        <div class="recommend-track">
             <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
             <a href="https://www.instagram.com/radio_gecko/?hl=en">
                 <img src="Images/instagram.png" alt="Instagram Logo">
