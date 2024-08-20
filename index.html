@@ -46,6 +46,17 @@
             top: -40px; /* Adjust this value to move the "Contact" button higher */
             background-color: white; /* Set background color to white */
         }
+        .social-links {
+            display: flex;
+            align-items: center;
+        }
+        .social-links a {
+            margin-left: 10px; /* Space between buttons */
+        }
+        .social-links img {
+            width: 30px; /* Adjust size of the social media icons */
+            height: 30px;
+        }
         main {
             display: flex;
             flex: 1; /* Allow main content to grow */
@@ -130,7 +141,12 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo"> <!-- Updated logo source -->
-        <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
+        <div class="social-links">
+            <a href="mailto:alvergnatdiego@gmail.com">Recommend a track</a>
+            <a href="https://www.instagram.com/radio_gecko/?hl=en">
+                <img src="Images/instagram.png" alt="Instagram Logo">
+            </a>
+        </div>
     </header>
     <main>
         <div class="content-left">
