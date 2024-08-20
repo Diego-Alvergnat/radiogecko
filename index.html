@@ -8,10 +8,12 @@
     <!-- Favicon link -->
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
+        /* Load the custom font */
         @font-face {
             font-family: 'Margin';
             src: url('Fonts/Margin.ttf') format('truetype');
         }
+
         html {
             background: url('Images/background.jpg') no-repeat fixed;
             background-size: cover;
@@ -39,28 +41,33 @@
             height: 150px;
             width: auto;
         }
-        header a.contact-button {
+        .button-container {
             display: flex;
             align-items: center;
+        }
+        header a.contact-button {
             text-decoration: none;
             color: black;
             font-weight: bold;
             border: 1px solid black;
-            padding: 5px 10px;
+            padding: 5px 10px; /* Slightly increased padding for larger button */
             border-radius: 5px;
             background-color: white;
             position: relative;
             top: -40px;
-            font-family: 'Margin', sans-serif;
+            font-family: 'Margin', Arial, sans-serif; /* Apply the custom font */
+            font-size: 22px; /* Slightly increased font size */
+            margin-right: 15px; /* Space between button and Instagram logo */
+            height: 40px; /* Set a fixed height for alignment */
+            display: flex;
+            align-items: center;
         }
-        header a.contact-button .contact-text {
-            margin-right: 10px;
-        }
-        header a.instagram-link img {
-            height: 24px; /* Adjust size as needed */
-            width: auto;
-            vertical-align: middle;
-            margin-left: 5px;
+        .instagram-logo {
+            height: 40px; /* Match the height of the CONTACT button */
+            width: 40px; /* Proportional width */
+            position: relative;
+            top: -40px;
+            cursor: pointer;
         }
         main {
             display: flex;
@@ -144,12 +151,12 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
-        <a href="mailto:contact@theradiogecko.com" class="contact-button">
-            <span class="contact-text">CONTACT</span>
-            <a href="https://www.instagram.com/radio_gecko/" class="instagram-link">
-                <img src="Images/instagram.png" alt="Instagram">
+        <div class="button-container">
+            <a href="mailto:contact@theradiogecko.com" class="contact-button">CONTACT</a>
+            <a href="https://www.instagram.com/radio_gecko/?hl=en" target="_blank">
+                <img src="Images/instagram.png" alt="Instagram Logo" class="instagram-logo">
             </a>
-        </a>
+        </div>
     </header>
     <main>
         <div class="content-left">
