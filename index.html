@@ -41,18 +41,29 @@
             height: 150px;
             width: auto;
         }
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
         header a {
             text-decoration: none;
             color: black;
             font-weight: bold;
             border: 1px solid black;
-            padding: 5px 10px; /* Reduced padding to minimize button size */
+            padding: 4px 8px; /* Further reduced padding to minimize button size */
             border-radius: 5px;
             background-color: white;
             position: relative;
             top: -40px;
             font-family: 'Margin', Arial, sans-serif; /* Apply the custom font */
             font-size: 24px; /* Keep the increased font size */
+            margin-right: 10px; /* Space between button and Instagram logo */
+        }
+        .instagram-logo {
+            height: 40px;
+            width: 40px;
+            position: relative;
+            top: -40px;
         }
         main {
             display: flex;
@@ -136,7 +147,12 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
-        <a href="mailto:contact@theradiogecko.com">Recommend a track</a>
+        <div class="button-container">
+            <a href="mailto:contact@theradiogecko.com">Recommend a track</a>
+            <a href="https://www.instagram.com/radio_gecko/?hl=en" target="_blank">
+                <img src="Images/instagram.png" alt="Instagram Logo" class="instagram-logo">
+            </a>
+        </div>
     </header>
     <main>
         <div class="content-left">
