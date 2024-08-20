@@ -8,20 +8,24 @@
     <!-- Favicon link -->
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
-        html, body {
+        @font-face {
+            font-family: 'Margin';
+            src: url('Fonts/Margin.ttf') format('truetype');
+        }
+        html {
             background: url('Images/background.jpg') no-repeat fixed;
             background-size: cover;
             background-position: right;
             height: 100%;
-            margin: 0;
             overflow: hidden;
         }
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
+            height: 100%;
             color: white;
-            height: 100vh;
         }
         header {
             display: flex;
@@ -35,7 +39,9 @@
             height: 150px;
             width: auto;
         }
-        header a {
+        header a.contact-button {
+            display: flex;
+            align-items: center;
             text-decoration: none;
             color: black;
             font-weight: bold;
@@ -45,6 +51,16 @@
             background-color: white;
             position: relative;
             top: -40px;
+            font-family: 'Margin', sans-serif;
+        }
+        header a.contact-button .contact-text {
+            margin-right: 10px;
+        }
+        header a.instagram-link img {
+            height: 24px; /* Adjust size as needed */
+            width: auto;
+            vertical-align: middle;
+            margin-left: 5px;
         }
         main {
             display: flex;
@@ -52,7 +68,6 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            height: 100vh;
         }
         .player {
             width: 470px;
@@ -129,7 +144,12 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
-        <a href="mailto:contact@theradiogecko.com">Recommend a track</a>
+        <a href="mailto:contact@theradiogecko.com" class="contact-button">
+            <span class="contact-text">CONTACT</span>
+            <a href="https://www.instagram.com/radio_gecko/" class="instagram-link">
+                <img src="Images/instagram.png" alt="Instagram">
+            </a>
+        </a>
     </header>
     <main>
         <div class="content-left">
