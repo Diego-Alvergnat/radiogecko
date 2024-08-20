@@ -35,28 +35,24 @@
             height: 150px; /* Increase height by 50px (original was 100px) */
             width: auto; /* Maintain aspect ratio */
         }
-        header a {
+        header .social-links {
+            display: flex;
+            align-items: center;
+        }
+        header .social-links a {
             text-decoration: none;
             color: black; /* Change text color to black */
             font-weight: bold;
             border: 1px solid black; /* Keep the border color as black */
             padding: 5px 10px; /* Adjust padding as needed */
             border-radius: 5px;
-            position: relative;
-            top: -40px; /* Adjust this value to move the "Recommend a track" button higher */
             background-color: white; /* Keep background color as white */
+            margin-right: 10px; /* Space between the button and the Instagram logo */
         }
-        .social-links {
-            display: flex;
-            align-items: center;
-        }
-        .social-links a {
-            margin-left: 10px; /* Space between buttons */
-        }
-        .social-links img {
+        header .social-links img {
             width: 30px; /* Adjust size of the social media icons */
             height: 30px;
-            margin-top: -40px; /* Align the Instagram logo under the "Recommend a track" button */
+            margin-right: 10px; /* Space between icons and the edge */
         }
         main {
             display: flex;
