@@ -8,20 +8,12 @@
     <!-- Favicon link -->
     <link rel="icon" type="image/png" href="Images/logo_image.png">
     <style>
-        /* Load the custom font */
-        @font-face {
-            font-family: 'Margin';
-            src: url('Fonts/Margin.ttf') format('truetype');
-        }
-
         html {
             background: url('Images/background.jpg') no-repeat fixed;
             background-size: cover;
             background-position: right;
             height: 100%;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
         }
         body {
             margin: 0;
@@ -30,7 +22,6 @@
             flex-direction: column;
             height: 100%;
             color: white;
-            overflow: hidden; /* Prevents scrolling */
         }
         header {
             display: flex;
@@ -44,34 +35,16 @@
             height: 150px;
             width: auto;
         }
-        .button-container {
-            display: flex;
-            align-items: center;
-        }
-        header a.contact-button {
+        header a {
             text-decoration: none;
             color: black;
             font-weight: bold;
             border: 1px solid black;
-            padding: 2px 5px; /* Reduced padding for smaller button */
+            padding: 5px 10px;
             border-radius: 5px;
             background-color: white;
             position: relative;
             top: -40px;
-            font-family: 'Margin', Arial, sans-serif; /* Apply the custom font */
-            font-size: 20px; /* Original font size */
-            margin-right: 15px; /* Space between button and Instagram logo */
-            height: 30px; /* Match the height of the Instagram logo */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .instagram-logo {
-            height: 30px; /* Match the height of the CONTACT button */
-            width: 30px; /* Proportional width */
-            position: relative;
-            top: -40px;
-            cursor: pointer;
         }
         main {
             display: flex;
@@ -85,8 +58,6 @@
             height: 100px;
             margin-bottom: 60px;
             min-width: 470px;
-            max-height: 100px;
-            z-index: 1;
         }
         .track-list {
             width: 470px;
@@ -131,7 +102,6 @@
                 bottom: 20px;
                 left: 0;
                 transform: none;
-                max-height: 100px;
             }
             .track-list {
                 display: none;
@@ -144,7 +114,6 @@
                 left: 0;
                 width: 470px;
                 height: 100px;
-                max-height: 100px;
             }
             .content-left {
                 margin-left: 0;
@@ -159,12 +128,7 @@
 <body>
     <header>
         <img src="Images/logo_image.png" alt="Radio Gecko Logo">
-        <div class="button-container">
-            <a href="mailto:contact@theradiogecko.com" class="contact-button">CONTACT</a>
-            <a href="https://www.instagram.com/radio_gecko/?hl=en" target="_blank">
-                <img src="Images/instagram.png" alt="Instagram Logo" class="instagram-logo">
-            </a>
-        </div>
+        <a href="mailto:contact@theradiogecko.com">Recommend a track</a>
     </header>
     <main>
         <div class="content-left">
